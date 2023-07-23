@@ -9,6 +9,7 @@ const User = require('../models/user')
 const Product = require('../models/product')
 const verify = require('../utility/verify')
 const paginate = require('../utility/pagination')
+const aggregation = require('../utility/aggregation')
 
 router.post('/signup/admin', async (req, res) => {
     try {
@@ -164,10 +165,11 @@ router.delete('/admin/delete-product/:id', passport.authenticate('jwt', { sessio
     }
 })
 
-router.get('/products', passport.authenticate('jwt', { session: false }), async (req, res) => {
+router.get('/products', passport.authenticate('jwt', { session: false }), async (req, res,next) => {
     const token = getToken(req.headers)
     if (token) {
-        paginate(req, res);
+       paginate(req, res, next);
+        
     }
     else {
         return res.status(403).send({ success: false, msg: 'Unauthorized.' });

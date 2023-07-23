@@ -1,6 +1,6 @@
 const Product = require('../models/product')
 
- async function paginate(req, res){
+module.exports =  async function paginate(req, res, next){
    try {
     
     const {page = 1, limit = 10} = req.query;
@@ -18,8 +18,7 @@ const Product = require('../models/product')
     res.json(data)
 }
     catch(err){
-        next (err)
+        next(err);
     }
 }
 
-module.exports = paginate
