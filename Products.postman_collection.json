@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "50fe4644-e69b-4541-be8a-88e89f71c5cf",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJjZDRjNjRjMmE2YWJlZDVlYWE1OWQiLCJ1c2VybmFtZSI6InNhbmtldDEiLCJwYXNzd29yZCI6IiQyYSQxMCREVnphTlJhMEhGa1pwbE5QNGt6RDQuNm5qMk92TS9ZbGRYWjNTZzZ3TlIxemxSOGg1M3dtbSIsIl9fdiI6MCwiaWF0IjoxNjkwMDk2OTI2LCJleHAiOjE2OTAxODMzMjZ9.mcdDIYcCBK1Lgcef4n7RH6mJ2ZhntwKg2_QoAJwQESU",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "sanketa",
+							"type": "default"
+						},
+						{
+							"key": "brand",
+							"value": "abc",
+							"type": "default"
+						},
+						{
+							"key": "rating",
+							"value": "5",
+							"type": "default"
+						},
+						{
+							"key": "price",
+							"value": "500",
+							"type": "default"
+						},
+						{
+							"key": "category",
+							"value": "human",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/admin/add-product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin",
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "rating",
+							"value": "6",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/admin/change/64bd09f6ea358074226de6d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin",
+						"change",
+						"64bd09f6ea358074226de6d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "sanket3",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "sanket",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "sanket3",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "sanket",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/signup/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"signup",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "sanket5",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "sanket",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/signup/admin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"signup",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:5000/admin/delete-product/64bd122942f0efe21a34e742",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"admin",
+						"delete-product",
+						"64bd122942f0efe21a34e742"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/signout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"signout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
