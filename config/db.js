@@ -1,4 +1,4 @@
 module.exports ={
     'secret' : "123@abc",
-    'db': "mongodb://localhost:27017"
+    'db': process.env.DB_URL || "mongodb://localhost:27017"
 }
