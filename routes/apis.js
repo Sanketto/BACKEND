@@ -11,6 +11,8 @@ const verify = require('../utility/verify')
 const paginate = require('../utility/pagination')
 const aggregation = require('../utility/aggregation')
 
+
+
 router.post('/signup/admin', async (req, res) => {
     try {
         if (!req.body.username || !req.body.password) {
@@ -165,11 +167,11 @@ router.delete('/admin/delete-product/:id', passport.authenticate('jwt', { sessio
     }
 })
 
-router.get('/products', passport.authenticate('jwt', { session: false }), async (req, res,next) => {
+router.get('/products', passport.authenticate('jwt', { session: false }), async (req, res, next) => {
     const token = getToken(req.headers)
     if (token) {
-       paginate(req, res, next);
-        
+        paginate(req, res, next);
+
     }
     else {
         return res.status(403).send({ success: false, msg: 'Unauthorized.' });
